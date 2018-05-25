@@ -1,0 +1,4 @@
+index:
+    path: /api/v1/
+    controller: App\Controller\IndexController::indexControllerMethod
+
