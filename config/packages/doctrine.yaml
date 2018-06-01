@@ -3,7 +3,7 @@ parameters:
     # This allows you to run cache:warmup even if your
     # environment variables are not available yet.
     # You should not need to change this value.
-    env(DATABASE_URL): 'mysql://root:root@127.0.0.1:3306/zposo'
+    env(DATABASE_URL): 'mysql://root:root@127.0.0.1:3306/zposo2'
 
 doctrine:
     dbal:
@@ -16,7 +16,7 @@ doctrine:
             collate: utf8mb4_unicode_ci
 
         #url: '%env(resolve:DATABASE_URL)%'
-        url: 'mysql://root:root@127.0.0.1:3306/zposo'
+        url: 'mysql://root:root@127.0.0.1:3306/zposo2'
     orm:
         auto_generate_proxy_classes: '%kernel.debug%'
         naming_strategy: doctrine.orm.naming_strategy.underscore

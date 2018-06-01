@@ -3,11 +3,12 @@
 namespace App\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
  */
-class User
+class User implements UserInterface
 {
     /**
      * @ORM\Id()
@@ -46,6 +47,39 @@ class User
      */
     private $personalData;
 
+    /**
+     * @ORM\Column(type="string", length=50)
+     */
+    private $role;
+
+    /**
+     * User constructor.
+     * @param string $login
+     * @param string $password
+     * @param string $email
+     * @param string $code
+     * @param string $role
+     */
+    public function __construct(
+        string $login,
+        string $password,
+        string $email,
+        string $code,
+        string $role
+    ) {
+        $this->login = $login;
+        $this->password = $password;
+        $this->email = $email;
+        $this->code = $code;
+        $this->createdAt = date('Y-m-d H:i:s');
+        $this->role = $role;
+    }
+
+    public function eraseCredentials()
+    {
+        return null;
+    }
+
     public function getId()
     {
         return $this->id;
@@ -54,6 +88,11 @@ class User
     public function getLogin(): ?string
     {
         return $this->login;
+    }
+
+    public function getUsername(): string
+    {
+        return $this->getLogin();
     }
 
     public function setLogin(string $login): self
@@ -126,5 +165,25 @@ class User
         }
 
         return $this;
+    }
+
+    public function getRole()
+    {
+        return $this->role;
+    }
+
+    public function setRole($role = null)
+    {
+        $this->role = $role;
+    }
+
+    public function getRoles(): array
+    {
+        return [$this->getRole()];
+    }
+
+    public function getSalt()
+    {
+        return null;
     }
 }
