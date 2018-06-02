@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="style.css">
+<style>
+@import url('https://fonts.googleapis.com/css?family=Itim');
+body {
+  margin: 0px;
+}
+header,
+footer {
+  font-family: 'Itim', cursive;
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #0f5f92), color-stop(1, #0192db));
+}
+header {
+  height: 50px;
+  padding: 10px;
+  position: relative;
+}
+header .menu-container {
+  display: block;
+  position: absolute;
+  bottom: 0px;
+  height: 40px;
+}
+header .menu-container .menu {
+  float: left;
+  margin-right: 4px;
+  background-color: #0D94D7;
+  height: 40px;
+  color: #fff;
+  text-align: center;
+}
+header .menu-container .menu p {
+  margin: 0;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 20px;
+}
+header .menu-container .menu .dropdown {
+  display: none;
+}
+header .menu-container .menu:hover {
+  background-color: #4CAF50;
+}
+header .menu-container .menu:hover .dropdown {
+  display: block;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+header .menu-container .menu:hover .dropdown a {
+  display: block;
+  background-color: #f9f9f9;
+  text-align: left;
+  padding: 5px;
+}
+header .menu-container .menu:hover .dropdown a:hover {
+  background-color: #d8d8d8;
+}
+footer {
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+}
+footer div {
+  padding: 10px;
+}
+</style>
+</head>
+<body>
+<div class="page">
+  <header>
+    <a href="/logout" style="float: right">Wyloguj się</a>
+    <span style="clear:both"></span>
+    <div class="menu-container">
+      <div class="menu">
+        <p>Administracja</p>
+        <div class="dropdown">
+          <a href="#">Link 1</a>
+          <a href="#">Link 2</a>
+          <a href="#">Link 3</a>
+        </div>
+      </div>
+      <div class="menu">
+        <p>Administracja</p>
+        <div class="dropdown">
+          <a href="#">Link 1</a>
+          <a href="#">Link 2</a>
+          <a href="#">Link 3</a>
+        </div>
+      </div>
+      <div class="menu">
+        <p>Administracja</p>
+        <div class="dropdown">
+          <a href="#">Link 1</a>
+          <a href="#">Link 2</a>
+          <a href="#">Link 3</a>
+        </div>
+      </div>
+      <div class="menu">
+        <p>Administracja</p>
+        <div class="dropdown">
+          <a href="#">Link 1</a>
+          <a href="#">Link 2</a>
+          <a href="#">Link 3</a>
+        </div>
+      </div>
+      <div class="menu">
+        <p>Administracja</p>
+        <div class="dropdown">
+          <a href="#">Link 1</a>
+          <a href="#">Link 2</a>
+          <a href="#">Link 3</a>
+        </div>
+      </div>
+      <div class="menu">
+        <p>Administracja</p>
+        <div class="dropdown">
+          <a href="#">Link 1</a>
+          <a href="#">Link 2</a>
+          <a href="#">Link 3</a>
+        </div>
+      </div>
+    </div>
+    <div style="clear:both"></div>
+  </header>
+  <main>
+    <!--tutaj głowna cześć strony-->
+  </main>
+  <footer>
+    <div>
+      &copy; ESO 2018
+    </div>
+  </footer>
+</div>
+<script>
+function header_center(){
+  var body = document.querySelectorAll('body');
+  var page_width = body[0].clientWidth;
+  var menuCont = document.getElementsByClassName('menu-container');
+  var header_menu_width = menuCont[0].clientWidth
+  let margin_header_menu = ((page_width-header_menu_width)/2)+"px";
+  menuCont[0].style.left = margin_header_menu;
+}
+window.onload = function(){header_center();}
+window.resize = function(){header_center();}
+</script>
+</body>
+</html>

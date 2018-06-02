@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>ESO :: Logowanie</title>
+    <link rel="stylesheet" href="administrator/css/index.css">
+</head>
+<body>
+
+<div class="form">
+    <form action="check" method="post">
+        <input type="text" placeholder="Login..." name="_username" required autofocus>
+        <br>
+        <input type="password" placeholder="Hasło..." name="_password" required>
+        <br>
+        <input type="submit" value="Zaloguj się" id="loginButton">
+    </form>
+</div>
+<script>
+
+    document.addEventListener('DOMContentLoaded', function(){
+
+        const loginButton = document.getElementById('loginButton');
+
+        loginButton.addEventListener('click', function(){
+
+            loginButton.value = 'Logowanie...';
+
+        });
+
+    });
+
+</script>
+</body>
+</html>
