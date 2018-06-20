@@ -2,8 +2,6 @@
 
 namespace App\Entity;
 
-use Doctrine\Common\Collections\ArrayCollection;
-use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -19,14 +17,16 @@ class PrivateMessage
     private $id;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\User")
+     * @ORM\ManyToOne(targetEntity="App\Entity\User")
+     * @ORM\JoinColumn(nullable=false)
      */
-    private $fromUserId;
+    private $fromUser;
 
     /**
-     * @ORM\ManyToMany(targetEntity="App\Entity\User")
+     * @ORM\ManyToOne(targetEntity="App\Entity\User")
+     * @ORM\JoinColumn(nullable=false)
      */
-    private $toUserId;
+    private $toUser;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -34,7 +34,7 @@ class PrivateMessage
     private $topic;
 
     /**
-     * @ORM\Column(type="string", length=999999)
+     * @ORM\Column(type="string", length=9999)
      */
     private $messageContent;
 
@@ -51,49 +51,48 @@ class PrivateMessage
     /**
      * @ORM\Column(type="datetime", nullable=true)
      */
-    private $viewDateTime;
+    private $viewedAt;
 
-    public function __construct()
-    {
-        $this->fromUserId = new ArrayCollection();
-        $this->toUserId = new ArrayCollection();
+    public function __construct(
+        string $topic,
+        string $content,
+        User $fromUser,
+        User $toUser,
+        string $sendDateTime
+    ) {
+        $this->fromUser = $fromUser;
+        $this->toUser = $toUser;
+        $this->topic = $topic;
+        $this->messageContent = $content;
+        $this->createdAt = $sendDateTime;
+        $this->isViewed = false;
+        $this->viewedAt = '0000-00-00 00:00';
     }
-
     public function getId()
     {
         return $this->id;
     }
 
-    /**
-     * @return Collection|User[]
-     */
-    public function getFromUserId(): Collection
+    public function getFromUser(): ?User
     {
-        return $this->fromUserId;
+        return $this->fromUser;
     }
 
-    /**
-     * @return Collection|User[]
-     */
-    public function getToUserId(): Collection
+    public function setFromUser(?User $fromUser): self
     {
-        return $this->toUserId;
-    }
-
-    public function addToUserId(User $toUserId): self
-    {
-        if (!$this->toUserId->contains($toUserId)) {
-            $this->toUserId[] = $toUserId;
-        }
+        $this->fromUser = $fromUser;
 
         return $this;
     }
 
-    public function removeToUserId(User $toUserId): self
+    public function getToUser(): ?User
     {
-        if ($this->toUserId->contains($toUserId)) {
-            $this->toUserId->removeElement($toUserId);
-        }
+        return $this->toUser;
+    }
+
+    public function setToUser(?User $toUser): self
+    {
+        $this->toUser = $toUser;
 
         return $this;
     }
@@ -146,14 +145,14 @@ class PrivateMessage
         return $this;
     }
 
-    public function getViewDateTime(): ?\DateTimeInterface
+    public function getViewedAt(): ?\DateTimeInterface
     {
-        return $this->viewDateTime;
+        return $this->viewedAt;
     }
 
-    public function setViewDateTime(?\DateTimeInterface $viewDateTime): self
+    public function setViewedAt(?\DateTimeInterface $viewedAt): self
     {
-        $this->viewDateTime = $viewDateTime;
+        $this->viewedAt = $viewedAt;
 
         return $this;
     }

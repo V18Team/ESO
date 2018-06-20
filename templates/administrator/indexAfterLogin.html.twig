@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+<style>
+
+body {
+  margin: 0px;
+}
+header,
+footer {
+  font-family: 'Arial';
+  background: -webkit-gradient(linear, left bottom, left top, color-stop(0, #0f5f92), color-stop(1, #0192db));
+}
+header {
+  height: 50px;
+  padding: 10px;
+  position: relative;
+}
+header .menu-container {
+  display: block;
+  position: absolute;
+  bottom: 0px;
+  height: 40px;
+}
+header .menu-container .menu {
+  float: left;
+  margin-right: 4px;
+  background-color: #0D94D7;
+  height: 40px;
+  width: 136.78px;
+  color: #fff;
+  overflow: visible;
+  text-align: center;
+}
+header .menu-container .menu p {
+  margin: 0;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 20px;
+}
+header .menu-container .menu .dropdown {
+  display: none;
+}
+header .menu-container .menu:hover {
+  background-color: #4CAF50;
+}
+header .menu-container .menu:hover .dropdown {
+  display: block;
+  width: 300px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+header .menu-container .menu:hover .dropdown a {
+  display: block;
+  background-color: #f9f9f9;
+  text-align: left;
+  padding: 5px;
+}
+header .menu-container .menu:hover .dropdown a:hover {
+  background-color: #d8d8d8;
+}
+footer {
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+}
+footer div {
+  padding: 10px;
+}
+/*
+header .menu-container {
+  display: block;
+  position: absolute;
+  bottom: 0px;
+  height: 40px;
+}
+header .menu-container .menu {
+  float: left;
+  margin-right: 4px;
+  background-color: #0D94D7;
+  height: 40px;
+  width: 136.78px;
+  color: #fff;
+  overflow: visible;
+  text-align: center;
+}
+
+
+header .menu-container .menu p {
+  margin: 0;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 20px;
+}
+header .menu-container .menu .dropdown {
+  display: none;
+}
+header .menu-container .menu:hover {
+  background-color: #4CAF50;
+}
+header .menu-container .menu:hover .dropdown {
+  display: block;
+  width: 300px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+header .menu-container .menu:hover .dropdown a {
+  display: block;
+  background-color: #f9f9f9;
+  text-align: left;
+  padding: 5px;
+}
+header .menu-container .menu:hover .dropdown a:hover {
+  background-color: #d8d8d8;
+}
+footer {
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+}
+footer div {
+  padding: 10px;
+}
+*/
+header {
+  height: 80px;
+  padding: 10px;
+  position: relative;
+}
+header .menu-container {
+  display: block;
+  position: absolute;
+  bottom: 0px;
+  height: 40px;
+}
+
+
+header .menu-container .menu {
+  float: left;
+  margin-right: 4px;
+  background-color: #0D94D7;
+  height: 40px;
+  color: #fff;
+  text-align: center;
+}
+header .menu-container .menu p {
+  margin: 0;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 10px;
+}
+
+header .menu-container .menu p:hover {
+  color: black;
+  background-color: #fff;
+}
+header .menu-container .menu .dropdown {
+  display: none;
+}
+header .menu-container .menu:hover {
+  background-color: #F3EEEE;
+  color: black;
+}
+header .menu-container .menu:hover .dropdown {
+  background-color: #F3EEEE;
+  color: black;
+  display: block;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+header .menu-container .menu:hover .dropdown a {
+  display: block;
+  background-color: #f9f9f9;
+  text-align: left;
+  padding: 5px;
+}
+header .menu-container .menu:hover .dropdown a:hover {
+  background-color: #d8d8d8;
+}
+footer {
+  bottom: 0;
+  position: absolute;
+  width: 100%;
+}
+footer div {
+  padding: 10px;
+}
+input[type=button], input[type=submit], button, select, input[type=text], input[type=password]{
+    padding: 5px;
+    height: 35px;
+    border: 1px solid #aaa;
+    border-radius: 5px;
+    background-color: #fff;
+    background: -webkit-gradient(linear, 50% 0%, 50% 100%, color-stop(20%, #ffffff), color-stop(50%, #f6f6f6), color-stop(52%, #eeeeee), color-stop(100%, #f4f4f4));
+    background: -webkit-linear-gradient(top, #ffffff 20%, #f6f6f6 50%, #eeeeee 52%, #f4f4f4 100%);
+    background: -moz-linear-gradient(top, #ffffff 20%, #f6f6f6 50%, #eeeeee 52%, #f4f4f4 100%);
+    background: -o-linear-gradient(top, #ffffff 20%, #f6f6f6 50%, #eeeeee 52%, #f4f4f4 100%);
+    background: linear-gradient(top, #ffffff 20%, #f6f6f6 50%, #eeeeee 52%, #f4f4f4 100%);
+    background-clip: padding-box;
+    box-shadow: 0 0 3px white inset, 0 1px 1px rgba(0, 0, 0, 0.1);
+    color: #444;
+    text-decoration: none;
+    white-space: nowrap;
+  
+}
+
+.modal-header{
+  background-color: #3296C8;
+  width: 100%;
+  
+  
+  
+}
+.menu{
+  /*  width: 100%;
+  background: -moz-linear-gradient(270deg, rgba(131,194,252,1) 0%, rgba(32,65,128,1) 100%); /* ff3.6+ 
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(131,194,252,1)), color-stop(100%, rgba(32,65,128,1))); /* safari4+,hrome 
+  background: -webkit-linear-gradient(270deg, rgba(131,194,252,1) 0%, rgba(32,65,128,1) 100%); /* safari5.1+,chrome10+ 
+  background: -o-linear-gradient(270deg, rgba(131,194,252,1) 0%, rgba(32,65,128,1) 100%); /* opera 11.10+ 
+  background: -ms-linear-gradient(270deg, rgba(131,194,252,1) 0%, rgba(32,65,128,1) 100%); /* ie10+ 
+  background: linear-gradient(180deg, rgba(131,194,252,1) 0%, rgba(32,65,128,1) 100%); /* w3c 
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#83C2FC', endColorstr='#204180',GradientType=0 ); /* ie6-9 IE 6-9 only support two color linear gradient*/
+background-image: -webkit-linear-gradient(bottom, #0A5A78 0%, #3296C8 100%);
+    background-image: -ms-linear-gradient(bottom, #0A5A78 0%, #3296C8 100%);
+    /* background-image: -webkit-gradient(
+ linear,
+ left bottom,
+ left top,
+ color-stop(0, #0F5F92),
+ color-stop(1, #0192DB)
+ ); */
+  
+}
+
+.nav-item{
+  text-align: center;
+  color: #ffffff !important;
+  padding: 10px;
+  padding-bottom: 0;
+  background-color: #59b0db;
+}
+
+.collapse, .navbar-nav{
+  margin-left: auto;
+  margin-right: auto;
+}
+
+body {
+    padding-top: 60px;
+    padding-bottom: 40px;
+}
+
+.sidebar-nav {
+    padding: 9px 0;
+}
+
+.dropdown-menu .sub-menu {
+    left: 100%;
+    position: absolute;
+    top: 0;
+    visibility: hidden;
+    margin-top: -1px;
+}
+
+.dropdown-menu li:hover .sub-menu {
+    visibility: visible;
+}
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+  background-color: #ffffff;
+}
+
+.nav-tabs .dropdown-menu, .nav-pills .dropdown-menu, .navbar .dropdown-menu {
+    margin-top: 0;
+}
+
+.navbar .sub-menu:before {
+    border-bottom: 7px solid transparent;
+    border-left: none;
+    border-right: 7px solid rgba(0, 0, 0, 0.2);
+    border-top: 7px solid transparent;
+    left: -7px;
+    top: 10px;
+}
+.navbar .sub-menu:after {
+    border-top: 6px solid transparent;
+    border-left: none;
+    border-right: 6px solid #fff;
+    border-bottom: 6px solid transparent;
+    left: 10px;
+    top: 11px;
+    left: -6px;
+}
+
+.dropdown-submenu {
+    position: relative;
+}
+
+.dropdown-submenu>.dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: -6px;
+    margin-left: -1px;
+    -webkit-border-radius: 0 6px 6px 6px;
+    -moz-border-radius: 0 6px 6px;
+    border-radius: 0 6px 6px 6px;
+}
+
+.dropdown-submenu:hover>.dropdown-menu {
+    display: block;
+}
+
+.dropdown-submenu>a:after {
+    display: block;
+    content: " ";
+    float: right;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+    border-width: 5px 0 5px 5px;
+    border-left-color: #ccc;
+    margin-top: 5px;
+    margin-right: -10px;
+}
+
+.dropdown-submenu:hover>a:after {
+    border-left-color: #fff;
+}
+
+.dropdown-submenu.pull-left {
+    float: none;
+}
+
+.dropdown-submenu.pull-left>.dropdown-menu {
+    left: -100%;
+    margin-left: 10px;
+    -webkit-border-radius: 6px 0 6px 6px;
+    -moz-border-radius: 6px 0 6px 6px;
+    border-radius: 6px 0 6px 6px;
+}
+
+
+.dropdown-submenu {
+    position: relative;
+}
+
+.dropdown-submenu>.dropdown-menu {
+    top: 0;
+    left: 100%;
+    margin-top: -6px;
+    margin-left: -1px;
+    -webkit-border-radius: 0 6px 6px 6px;
+    -moz-border-radius: 0 6px 6px;
+    border-radius: 0 6px 6px 6px;
+}
+
+.dropdown-submenu:hover>.dropdown-menu {
+    display: block;
+}
+
+.dropdown-submenu>a:after {
+    display: block;
+    content: " ";
+    float: right;
+    width: 0;
+    height: 0;
+    border-color: transparent;
+    border-style: solid;
+    border-width: 5px 0 5px 5px;
+    border-left-color: #ccc;
+    margin-top: 5px;
+    margin-right: -10px;
+}
+
+.dropdown-submenu:hover>a:after {
+    border-left-color: #fff;
+}
+
+.dropdown-submenu.pull-left {
+    float: none;
+}
+
+.dropdown-submenu.pull-left>.dropdown-menu {
+    left: -100%;
+    margin-left: 10px;
+    -webkit-border-radius: 6px 0 6px 6px;
+    -moz-border-radius: 6px 0 6px 6px;
+    border-radius: 6px 0 6px 6px;
+}
+
+.left{
+  float: left;
+}
+
+.right{
+ 
+  float: right;
+}
+
+.inBox{
+  
+}
+
+.center{
+  text-align: center;
+}
+
+.red{
+  color: red;
+}
+
+.nav-item:hover {
+   background-color:#ffffff; 
+  color: #000000;
+}
+
+.nav-link{
+  color: #ffffff;
+}
+
+.nav-link:hover{
+  color: #000000;
+}
+
+.col-sm-6{
+  max-width: 100%;
+  min-width: 100%;
+  width: 100%;
+}
+
+a, a:link, a:hover, a:visited{
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* tabela striped */
+tr:nth-child(even) {
+    background-color: #ECF6FC;
+}
+tr:hover{
+  background-color: #cbe8ff;
+}
+
+tr.clear{
+  background-color: #ffffff;
+}
+
+table{
+  width: 100%;
+  min-width: 100%;
+  max-width: 100%;
+}
+
+.col-sm-1, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6,
+.col-sm-7, .col-sm-8, .col-sm-9, .col-sm-10, .col-sm-11, .col-sm-12{
+      width: 100%;
+  min-width: 100%;
+  max-width: 100%;
+}
+</style>
+</head>
+<body>
+<div class="page">
+  <!--<header>
+    <a href="/logout" style="float: right">Wyloguj się</a>
+    <span style="clear:both"></span>
+<!--
+    <div class="menu-container">
+      <div class="menu">
+        <p>Administracja</p>
+        <div class="dropdown">
+          <a href="#">Link 1</a>
+          <a href="#">Link 2</a>
+          <a href="#">Link 3</a>
+        </div>
+      </div>
+      <div class="menu">
+        <p>Zajęcia</p>
+        <div class="dropdown">
+          <a href="#">Link 1</a>
+          <a href="#">Link 2</a>
+          <a href="#">Link 3</a>
+        </div>
+      </div>
+      <div class="menu">
+        <p>Klasy, grupy</p>
+        <div class="dropdown">
+          <!--<a href="#">Link 1</a>
+          <a href="#">Link 2</a>
+          <a href="#">Link 3</a>-
+        SIEMANKO<br>SIEMA<br>SIE<br>SSDASDASJDHDJKSFHJSDFHKJJJJJEURYEWUWYEYEYEYEY
+        </div>
+      </div>
+      <div class="menu">
+        <p>Zestawienia</p>
+        <div class="dropdown">
+          <a href="#">Link 1</a>
+          <a href="#">Link 2</a>
+          <a href="#">Link 3</a>
+        </div>
+      </div>
+      <div class="menu">
+        <p>Narzędzia</p>
+        <div class="dropdown">
+          <a href="#">Link 1</a>
+          <a href="#">Link 2</a>
+          <a href="#">Link 3</a>
+        </div>
+      </div>
+      <div class="menu">
+        <p>Moje konto</p>
+        <div class="dropdown">
+          <a href="#">Link 1</a>
+          <a href="#">Link 2</a>
+          <a href="#">Link 3</a>
+        </div>
+      </div>
+    </div>--
+
+    <div style="clear:both"></div>
+  </header>-->
+<nav class="navbar navbar-expand-lg navbar-light bg-light menu" style="color: #ffffff; position: relative; ">
+  <div class="collapse navbar-collapse" id="navbarNavDropdown">
+    <ul class="navbar-nav" style="position: absolute;
+                bottom: 0; ">
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Administracja
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink2">
+          <div class="inBox" style="/*! width: 550px; */">
+            
+<table class="tg">
+  <tbody><tr class="clear">
+    <th class="tg-e3zv">Zarządzanie</th>
+    <th class="tg-9hbo">Konfiguracja</th>
+    <th class="tg-yw4l"></th>
+  </tr>
+  <tr class="clear">
+    <td class="tg-yw4l"><a href="dataTable.php">Tabele danych</a></td>
+    <td class="tg-yw4l">Okresy klasyfikacyjne</td>
+    <td class="tg-yw4l">Grupy</td>
+  </tr>
+  <tr class="clear">
+    <td class="tg-yw4l">Zarządzanie tabelami</td>
+    <td class="tg-yw4l">Grupy i okresy klas.</td>
+    <td class="tg-yw4l"><a href="studentsShow.php">Uczniowie</a></td>
+  </tr>
+  <tr class="clear">
+    <td class="tg-6kuv">Lista prowadzonych zajęć </td>
+    <td class="tg-yw4l">Godziny zajęć</td>
+    <td class="tg-yw4l"><a href="TeachersShow.php">Nauczyciele</a></td>
+  </tr>
+  <tr class="clear">
+    <td class="tg-yw4l" style="font-weight: bold;">Administracja</td>
+    <td class="tg-yw4l"><a href="subjects.php">Przedmioty</a></td>
+    <td class="tg-yw4l"><a href="usersShow.php">Użytkownicy</a></td>
+  </tr>
+  <tr class="clear">
+    <td class="tg-yw4l">Ustawienia systemu</td>
+    <td class="tg-yw4l">Sale lekcyjne</td>
+    <td class="tg-yw4l"><a href="lessonPlanA.php">Plany lekcji</a></td>
+  </tr>
+  <tr class="clear">
+    <td class="tg-yw4l"><a href="core/import.php">Import danych z pliku</a></td>
+    <td class="tg-yw4l">Typy obecności</td>
+    <td class="tg-yw4l">Dni wolne</td>
+  </tr>
+  <tr class="clear">
+    <td class="tg-yw4l"><a href="core/export.php">Eksport danych do pliku</a></td>
+    <td class="tg-yw4l">Rodzaje ocen</td>
+    <td class="tg-yw4l">Nagłówki i tytuły</td>
+  </tr>
+  <tr class="clear">
+    <td class="tg-yw4l">Import z pop. roku</td>
+    <td class="tg-yw4l">Skale ocen</td>
+    <td class="tg-yw4l">Profile klas</td>
+  </tr>
+  <tr class="clear">
+    <td class="tg-yw4l">Import tematów</td>
+    <td class="tg-yw4l">Progi ocen</td>
+    <td class="tg-yw4l">Typy dni wolnych</td>
+  </tr>
+  <tr class="clear">
+    <td class="tg-yw4l">Generator planów</td>
+    <td class="tg-yw4l">Ocena opisowa</td>
+    <td class="tg-yw4l">Typy innych wydarzeń</td>
+  </tr>
+  <tr class="clear">
+    <td class="tg-yw4l"><small><span style="color: red;">Pomoc do importu</span></small></td>
+    <td class="tg-yw4l">Świetlica</td>
+    <td class="tg-yw4l">Powody zastępstw</td>
+  </tr>
+</tbody></table>
+            
+          </div>
+        </div>
+        </li>
+      <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink3" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Zajęcia
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink3">
+          <div class="inBox" style="width: 325px;">
+   
+<table class="tg" style="background-color: #ffffff;">
+  <tbody><tr class="clear">
+    <th class="tg-e3zv">Obecności i tematy</th>
+    <th class="tg-9hbo">Oceny</th>
+  </tr>
+  <tr class="clear">
+    <td class="tg-yw4l">Uzupełnij na zajęciach</td>
+    <td class="tg-yw4l">Karta z ocenami</td>
+  </tr>
+  <tr class="clear">
+    <td class="tg-yw4l">Przeglądaj</td>
+    <td class="tg-yw4l">Oceny zachowania</td>
+  </tr>
+  <tr class="clear">
+    <td class="tg-6kuv">Realizacja tematów</td>
+    <td class="tg-yw4l">Uwagi i pochwały</td>
+  </tr>
+  <tr class="clear">
+    <td class="tg-yw41">Rozkłady materiału</td>
+    <td class="tg-yw4l">Losuj do odpowiedzi</td>
+  </tr>
+</tbody></table>
+            
+          </div>
+        </div>
+        </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Klasy/Grupy</a>
+      </li>
+        <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink4" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Narzędzia
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink4">
+          <div class="inBox" style="width: 550px;">
+<table class="tg">
+  <tbody><tr class="clear">
+    <th class="tg-e3zv" style="font-weight: bold;">Rozkłady materiałów</th>
+    <th class="tg-9hbo" style="font-weight: bold;">Zadania domowe</th>
+    <th class="tg-yw4l" style="font-weight: bold;">Świetlica</th>
+  </tr>
+  <tr class="clear">
+    <td class="tg-yw4l">Przypisywanie rozkładów</td>
+    <td class="tg-yw4l">Zadane, Szablony</td>
+    <td class="tg-yw4l">Panel, Deklaracje</td>
+  </tr>
+  <tr class="clear">
+    <td class="tg-yw4l">Lokalne rozkłady</td>
+    <td class="tg-yw4l" style="font-weight: bold;">Sprawdziany</td>
+    <td class="tg-yw4l" style="font-weight: bold;">Inne</td>
+  </tr>
+  <tr class="clear">
+    <td class="tg-6kuv" style="color: red;"><small>Pomoc do rozkładów</small></td>
+    <td class="tg-yw4l">Zaplanowane, Szablony</td>
+    <td class="tg-yw4l">Masowe resetowanie haseł</td>
+  </tr>
+  <tr class="clear">
+    <td class="tg-yw4l" style="font-weight: bold;">Ocena opisowa</td>
+    <td class="tg-yw4l" style="font-weight: bold;">Podręczniki</td>
+    <td class="tg-yw4l">Eksport loginów do PDF</td>
+  </tr>
+  <tr class="clear">
+    <td class="tg-yw4l">Przypisywanie obszarów</td>
+    <td class="tg-yw4l">Przypisywanie podręczników</td>
+    <td class="tg-yw4l">Rada Rodziców Szkoły</td>
+  </tr>
+  <tr class="clear">
+    <td class="tg-yw4l">Lokalne obszary</td>
+    <td class="tg-yw4l">Lokalne podręczniki</td>
+    <td class="tg-yw4l" style="font-weight: bold;">e-Moduły</td>
+  </tr>
+  <tr class="clear">
+    <td class="tg-yw4l">Skale ocen, Progi ocen</td>
+    <td class="tg-yw4l">Lista dla szkoły (dyrektor)</td>
+    <td class="tg-yw4l">e-Biblioteka</td>
+  </tr>
+  <tr class="clear">
+    <td class="tg-yw4l">Ocena opisowa zbiorcza</td>
+    <td class="tg-yw4l"><small style="color: red;">Pomoc do podręczników</small></td>
+    <td class="tg-yw4l"><small style="color: red;">Pomoc dla e-Biblioteki</small></td>
+  </tr>
+  <tr class="clear">
+    <td class="tg-yw4l">Ocena opisowa okresowa</td>
+    <td class="tg-yw4l" style="font-weight: bold;">Certyfikaty</td>
+    <td class="tg-yw4l">e-Testy</td>
+  </tr>
+  <tr class="clear">
+    <td class="tg-yw4l"><small style="color: red;">Pomoc do oceny opisowej</small></td>
+    <td class="tg-yw4l">Generator certyfikatów</td>
+    <td class="tg-yw4l"><small style="color: red;">Pomoc dla e-Testów</small></td>
+  </tr>
+  <tr class="clear">
+    <td class="tg-yw4l"></td>
+    <td class="tg-yw4l">Lista certyfikatów</td>
+    <td class="tg-yw4l">e-Zadania</td>
+  </tr>
+  <tr class="clear">
+    <td class="tg-yw4l"></td>
+    <td class="tg-yw4l"><small style="color: red;">Pomoc do certyfikatów</small></td>
+    <td class="tg-yw4l"><small style="color: red;">Pomoc dla e-Zadań</small></td>
+  </tr>
+</tbody></table>
+            
+          </div>
+        </div>
+        </li>
+        <li class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink5" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+          Moje konto
+        </a>
+        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink5">
+          <div class="inBox" style="width: 325px;">
+   
+<table class="tg">
+  <tbody><tr class="clear">
+    <th class="tg-e3zv">Kontakt</th>
+    <th class="tg-9hbo">Ustawienia</th>
+  </tr>
+  <tr class="clear">
+    <td class="tg-yw4l">Nowa wiadomość</td>
+    <td class="tg-yw4l">Ustawienia systemu</td>
+  </tr>
+  <tr class="clear">
+    <td class="tg-yw4l"><a href="odbiorcza.php">Skrzynka odbiorcza</a></td>
+    <td class="tg-yw4l">Ustawienia dostępu</td>
+  </tr>
+  <tr class="clear">
+    <td class="tg-6kuv"><a href="nadawcza.php">Skrzynka nadawcza</a></td>
+    <td class="tg-yw4l">Logi dostępu</td>
+  </tr>
+  <tr class="clear">
+    <td class="tg-yw41">Tablica ogłoszeń</td>
+    <td class="tg-yw4l"></td>
+  </tr>
+</tbody></table>
+            
+          </div>
+          <div style="clear:both"></div>
+        </div>
+        <div style="clear:both"></div>
+        </li>
+      <div style="clear:both"></div>
+   </ul></div>
+   
+  <span style="color: white; float: right; margin-right: 0;">Zalogowano jako administrator<br>[&nbsp;<a style="color: chartreuse; text-decoration: none;" href="logout.php">WYLOGUJ SIĘ</a>&nbsp;]
+  <br>Czwartek, <span id="timer">09:16:47, 4 kwietnia 2018</span></span>
+</nav>
+  <main>
+
+    <!--tutaj głowna cześć strony-->
+  </main>
+  <footer>
+    <div>
+      &copy; ESO 2018
+    </div>
+  </footer>
+</div>
+<script>
+function header_center(){
+  var body = document.querySelectorAll('body');
+  var page_width = body[0].clientWidth;
+  var menuCont = document.getElementsByClassName('menu-container');
+  var header_menu_width = menuCont[0].clientWidth
+  let margin_header_menu = ((page_width-header_menu_width)/2)+"px";
+  menuCont[0].style.left = margin_header_menu;
+}
+window.onload = function(){header_center();}
+window.resize = function(){header_center();}
+</script>
+</body>
+</html>
