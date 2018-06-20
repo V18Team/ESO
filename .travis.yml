@@ -1,0 +1,8 @@
+language: php
+php:
+  - '7.1'
+before_install:
+  - composer global require "phpunit/phpunit"
+  - composer install
+install:
+- phpunit
