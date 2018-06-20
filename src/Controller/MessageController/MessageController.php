@@ -14,6 +14,8 @@
 
 namespace App\Controller\MessageController;
 
+use App\Builder\PrivateMessage\PrivateMessageBuilder;
+use App\Formatter\FormatDateTime;
 use App\MessageTemplate\JsonResponseMessageTemplate;
 use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
@@ -40,6 +42,22 @@ class MessageController extends Controller
             );
         }
 
+        $message = new PrivateMessageBuilder(
+            $subject,
+            $content,
+            $this->getUser(),
+            $toUser,
+            FormatDateTime::returnFormattedDateTimeForPrivateMessage()
+        );
 
+        $entityManager->persist($message->getObject());
+        $entityManager->flush();
+
+        return new JsonResponse(
+            [
+                'message' => JsonResponseMessageTemplate::OK
+            ],
+            JsonResponse::HTTP_OK
+        );
     }
 }
